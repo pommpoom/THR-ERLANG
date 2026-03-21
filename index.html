@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eid al-Fitr THR Giveaway</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-glow glow-1"></div>
+    <div class="background-glow glow-2"></div>
+
+    <header class="site-header">
+      <div class="brand-chip">Eid Gift Experience</div>
+      <div class="progress-pill" id="topProgress">Selamat Datang</div>
+    </header>
+
+    <main class="app-shell">
+      <section class="screen screen--active" id="welcomeScreen" data-step="1">
+        <div class="ornament ornament-left"></div>
+        <div class="ornament ornament-right"></div>
+
+        <div class="hero-card">
+          <p class="eyebrow">Assalamu'alaikum</p>
+          <h1>Selamat Hari Raya Idul Fitri</h1>
+          <p class="hero-text">
+            Mohon maaf lahir dan batin. Website kecil ini aku siapkan sebagai
+            hadiah Lebaran yang hangat, personal, dan seru untuk orang-orang
+            spesial.
+          </p>
+
+          <div class="photo-card">
+            <div class="photo-frame">
+              <div class="photo-placeholder">
+                <span>Foto Kamu</span>
+                <small>Ganti area ini dengan foto pribadi nanti</small>
+              </div>
+            </div>
+            <div class="photo-caption">
+              <strong>Lebaran Special</strong>
+              <p>Sebuah salam, doa baik, dan kesempatan mendapatkan THR.</p>
+            </div>
+          </div>
+
+          <button class="primary-button" data-next="greetingScreen">
+            Open Greeting
+          </button>
+        </div>
+      </section>
+
+      <section class="screen" id="greetingScreen" data-step="2">
+        <div class="content-card">
+          <p class="eyebrow">Pesan Spesial</p>
+          <h2>Untuk Kamu yang Datang Berkunjung</h2>
+          <p>
+            Di hari yang fitri ini, semoga hati kita dilapangkan, langkah kita
+            dimudahkan, dan rumah kita dipenuhi ketenangan. Terima kasih sudah
+            mau mampir ke halaman kecil ini.
+          </p>
+          <p>
+            Sebagai bentuk apresiasi dan kebahagiaan Lebaran, aku bikin THR
+            giveaway sederhana. Tapi biar lebih seru, kamu perlu jawab kuis
+            singkat tentang aku dulu.
+          </p>
+          <button class="primary-button" data-next="rulesScreen">
+            Lanjutkan
+          </button>
+        </div>
+      </section>
+
+      <section class="screen" id="rulesScreen" data-step="3">
+        <div class="content-card">
+          <p class="eyebrow">Cara Main</p>
+          <h2>Quiz THR Lebaran</h2>
+          <div class="rules-grid">
+            <article class="rule-item">
+              <span>10</span>
+              <p>Pertanyaan pilihan ganda tentang aku</p>
+            </article>
+            <article class="rule-item">
+              <span>Rp1.000</span>
+              <p>Nilai untuk setiap jawaban yang benar</p>
+            </article>
+            <article class="rule-item">
+              <span>Rp10.000</span>
+              <p>THR maksimal yang bisa kamu dapatkan</p>
+            </article>
+          </div>
+          <p class="helper-text">
+            Jawab dengan santai, nikmati momennya, dan semoga rezekimu juga ikut
+            mengalir deras di hari kemenangan ini.
+          </p>
+          <button class="primary-button" data-next="nameScreen">
+            Mulai Sekarang
+          </button>
+        </div>
+      </section>
+
+      <section class="screen" id="nameScreen" data-step="4">
+        <div class="content-card">
+          <p class="eyebrow">Identitas Pengunjung</p>
+          <h2>Sebelum Mulai, Isi Nama Dulu</h2>
+          <form id="nameForm" class="form-card">
+            <label for="visitorName">Nama lengkap</label>
+            <input
+              type="text"
+              id="visitorName"
+              name="visitorName"
+              placeholder="Contoh: Aisyah Ramadhani"
+              autocomplete="name"
+              required
+            />
+            <p class="helper-text">
+              Email belum diperlukan. Proteksi duplikat bisa ditambahkan nanti
+              pada versi berikutnya.
+            </p>
+            <button type="submit" class="primary-button">Masuk ke Quiz</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="screen" id="quizScreen" data-step="5">
+        <div class="content-card quiz-card">
+          <div class="quiz-meta">
+            <span id="questionProgress">Pertanyaan 1 dari 10</span>
+            <span class="quiz-hint">Pilih jawaban terbaikmu</span>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress-bar__fill" id="quizProgressBar"></div>
+          </div>
+
+          <div id="quizContent"></div>
+
+          <div class="quiz-actions">
+            <button type="button" class="secondary-button" id="prevQuestionBtn">
+              Sebelumnya
+            </button>
+            <button type="button" class="primary-button" id="nextQuestionBtn">
+              Berikutnya
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="resultScreen" data-step="6">
+        <div class="content-card result-card">
+          <p class="eyebrow">Hasil Quiz</p>
+          <h2>THR Kamu Sudah Dihitung</h2>
+          <div class="result-highlight">
+            <p id="resultGreeting">Selamat!</p>
+            <h3 id="resultReward">Rp0</h3>
+            <span id="resultScore">0 jawaban benar</span>
+          </div>
+          <div class="result-summary">
+            <p><strong>Nama:</strong> <span id="resultName">-</span></p>
+            <p><strong>Perolehan:</strong> <span id="resultDetail">-</span></p>
+          </div>
+          <p class="helper-text">
+            Terima kasih sudah ikut meramaikan suasana Lebaran di halaman ini.
+            Lanjut isi form klaim agar THR kamu bisa aku proses nanti.
+          </p>
+          <button class="primary-button" data-next="claimScreen">
+            Klaim THR
+          </button>
+        </div>
+      </section>
+
+      <section class="screen" id="claimScreen" data-step="7">
+        <div class="content-card">
+          <p class="eyebrow">Form Klaim</p>
+          <h2>Isi Data Penerimaan THR</h2>
+          <form id="claimForm" class="form-card">
+            <label for="claimName">Nama lengkap</label>
+            <input type="text" id="claimName" name="claimName" required />
+
+            <label for="paymentMethod">Metode pembayaran</label>
+            <select id="paymentMethod" name="paymentMethod" required>
+              <option value="">Pilih metode pembayaran</option>
+              <option value="dana">DANA</option>
+              <option value="gopay">GoPay</option>
+              <option value="bank">Transfer Bank</option>
+            </select>
+
+            <div class="conditional-field" data-method="dana">
+              <label for="danaNumber">Nomor DANA</label>
+              <input
+                type="tel"
+                id="danaNumber"
+                name="danaNumber"
+                placeholder="08xxxxxxxxxx"
+              />
+            </div>
+
+            <div class="conditional-field" data-method="gopay">
+              <label for="gopayNumber">Nomor GoPay</label>
+              <input
+                type="tel"
+                id="gopayNumber"
+                name="gopayNumber"
+                placeholder="08xxxxxxxxxx"
+              />
+            </div>
+
+            <div class="conditional-field" data-method="bank">
+              <label for="bankNumber">Nomor rekening</label>
+              <input
+                type="text"
+                id="bankNumber"
+                name="bankNumber"
+                placeholder="Contoh: 1234567890"
+              />
+            </div>
+
+            <label for="accountName">Nama pemilik akun / rekening</label>
+            <input
+              type="text"
+              id="accountName"
+              name="accountName"
+              placeholder="Sesuai akun penerima"
+              required
+            />
+
+            <label for="notes">Catatan tambahan (opsional)</label>
+            <textarea
+              id="notes"
+              name="notes"
+              rows="4"
+              placeholder="Contoh: kirim setelah Lebaran, nomor ini aktif, dll."
+            ></textarea>
+
+            <button type="submit" class="primary-button">
+              Kirim Klaim THR
+            </button>
+          </form>
+
+          <div class="success-card hidden" id="claimSuccess">
+            <h3>Klaim berhasil dicatat</h3>
+            <p>
+              Data kamu sudah tersimpan di browser ini sebagai simulasi. Nanti
+              tinggal diproses secara manual untuk pengiriman THR.
+            </p>
+            <button class="secondary-button" data-next="welcomeScreen">
+              Kembali ke Awal
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
