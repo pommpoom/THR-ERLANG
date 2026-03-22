@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lebaran Bareng Erlang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-glow glow-1"></div>
+    <div class="background-glow glow-2"></div>
+
+    <header class="site-header">
+      <div class="brand-chip">Lebaran Bareng Erlang</div>
+      <div class="progress-pill" id="topProgress">Selamat Datang</div>
+    </header>
+
+    <main class="app-shell">
+      <section class="screen screen--active" id="welcomeScreen" data-step="1">
+        <div class="ornament ornament-left"></div>
+        <div class="ornament ornament-right"></div>
+
+        <div class="hero-card">
+          <p class="eyebrow">Assalamu'alaikum</p>
+          <h1>Selamat Hari Raya Idul Fitri</h1>
+          <p class="hero-text">
+            Mohon maaf lahir dan batin. Website kecil ini aku buat untuk seru-seruan dan berbagi kebahagiaan kecil di momen Lebaran. Bukan untuk pamer atau riya yaa.
+          </p>
+
+          <div class="photo-card">
+            <div class="photo-frame">
+              <img class="hero-photo" src="images/foto-aku.jpeg" alt="Foto Erlangga" />
+            </div>
+            <div class="photo-caption">
+              <strong>Lebaran Bareng Erlang</strong>
+              <p>Sebuah salam, doa baik, dan kebahagiaan di hari yang fitri.</p>
+            </div>
+          </div>
+          <button class="primary-button" id="openGreetingBtn" type="button">
+            Buka Ucapan
+          </button>
+        </div>
+      </section>
+
+      <section class="screen" id="greetingScreen" data-step="2">
+        <div class="content-card">
+          <p class="eyebrow">Pesan Spesial</p>
+          <h2>Untuk Kamu yang Datang Berkunjung</h2>
+          <div class="special-message">
+            <div class="special-message__card special-message__card--greeting">
+              <p class="special-message__lead">Selamat Hari Raya Idul Fitri</p>
+              <p class="special-message__sublead">Mohon maaf lahir dan batin yaa</p>
+            </div>
+
+            <div class="special-message__card special-message__card--heartfelt">
+              <p>
+                Di momen yang fitri ini,<br />
+                Aku mau minta maaf kalau selama ini ada kata atau sikap yang kurang berkenan, baik yang disengaja maupun nggak.<br />
+              </p>
+            </div>
+
+            <div class="special-message__card special-message__card--prayer">
+              <p>
+                Semoga ke depan lebih banyak hal baik, dan semuanya bisa berjalan lebih lancar.<br />                                          
+              </p>
+              <p class="special-message__highlight">
+                Wishing you peaceful days, happy moments, and a heart full of joy.
+              </p>
+            </div>
+
+            <div class="special-message__card special-message__card--closing">
+              <p>
+                Terima kasih ya sudah hadir dan jadi bagian dari cerita hidupku sejauh ini.<br />              
+              </p>
+              <span class="special-message__divider" aria-hidden="true"></span>
+              <p class="special-message__cta-copy">
+                Happy Eid Mubarak to those who celebrate!
+              </p>
+            </div>
+
+            <div class="special-message__card special-message__card--note">
+              <p class="special-message__note">
+                Di hari lebaran ini, ada sedikit kejutan yang aku siapin buat kamu.<br />
+                Nggak banyak sih... tapi lumayan.<br />
+                Tapi biar lebih seru, kamu perlu jawab kuis singkat tentang aku dulu.
+              </p>
+            </div>
+          </div>
+          <button class="primary-button greeting-cta-button" data-next="rulesScreen">
+            Minta Erlang THR
+          </button>
+        </div>
+      </section>
+
+      <section class="screen" id="rulesScreen" data-step="3">
+        <div class="content-card">
+          <p class="eyebrow">Cara Main</p>
+          <h2>Quiz THR Lebaran</h2>
+          <div class="rules-grid">
+            <article class="rule-item">
+              <span>10</span>
+              <p>Pertanyaan pilihan ganda tentang aku</p>
+            </article>
+            <article class="rule-item">
+              <span>Rp1.000</span>
+              <p>Nilai untuk setiap jawaban yang benar</p>
+            </article>
+            <article class="rule-item">
+              <span>Rp10.000</span>
+              <p>THR maksimal yang bisa kamu dapatkan</p>
+            </article>
+          </div>
+          <p class="helper-text">
+            Jawab santai aja, jangan terlalu serius, ini cuma buat seru-seruan.
+          </p>
+          <button class="primary-button" data-next="nameScreen">
+            Mulai Sekarang
+          </button>
+        </div>
+      </section>
+
+      <section class="screen" id="nameScreen" data-step="4">
+        <div class="content-card">
+          <p class="eyebrow">Identitas Teman Erlang</p>
+          <h2>Sebelum Mulai, Isi Nama Dulu</h2>
+          <form id="nameForm" class="form-card">
+            <label for="visitorName">Nama Panggilan</label>
+            <input
+              type="text"
+              id="visitorName"
+              name="visitorName"
+              placeholder="Contoh: Yujin"
+              autocomplete="name"
+              required
+            />
+            <p class="helper-text">
+              Jawaban yang kamu berikan akan terkirim dan dapat dilihat oleh Erlang.
+            </p>
+            <button type="submit" class="primary-button">Masuk ke Quiz</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="screen" id="quizScreen" data-step="5">
+        <div class="content-card quiz-card">
+          <div class="quiz-meta">
+            <span id="questionProgress">Pertanyaan 1 dari 10</span>
+            <span class="quiz-hint">Pilih jawaban terbaikmu</span>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress-bar__fill" id="quizProgressBar"></div>
+          </div>
+
+          <div id="quizContent"></div>
+
+          <div class="quiz-actions">
+            <button type="button" class="secondary-button" id="prevQuestionBtn">
+              Sebelumnya
+            </button>
+            <button type="button" class="primary-button" id="nextQuestionBtn">
+              Berikutnya
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="resultScreen" data-step="6">
+        <div class="content-card result-card">
+          <p class="eyebrow">Hasil Quiz</p>
+          <h2>THR Kamu Sudah Dihitung</h2>
+          <div class="result-highlight">
+            <p id="resultGreeting">Selamat!</p>
+            <h3 id="resultReward">Rp0</h3>
+            <span id="resultScore">0 jawaban benar</span>
+          </div>
+          <p class="result-roast" id="resultRoast">Tetap seru, tetap dapat THR.</p>
+          <div class="result-summary">
+            <p><strong>Nama:</strong> <span id="resultName">-</span></p>
+            <p><strong>Perolehan:</strong> <span id="resultDetail">-</span></p>
+          </div>
+          <p class="helper-text">
+            Terima kasih sudah ikut meramaikan suasana Lebaran di halaman ini.
+            Lanjut isi form klaim agar THR kamu bisa aku proses nanti.
+          </p>
+          <button class="primary-button" id="resultClaimBtn" type="button">
+            Klaim THR
+          </button>
+        </div>
+      </section>
+
+      <section class="screen" id="claimScreen" data-step="7">
+        <div class="content-card">
+          <p class="eyebrow">Form Klaim</p>
+          <h2>Isi Data Penerimaan THR</h2>
+          <form id="claimForm" class="form-card">
+            <label for="claimName">Nama lengkap</label>
+            <input type="text" id="claimName" name="claimName" required />
+
+            <label for="paymentMethod">Metode pembayaran</label>
+            <select id="paymentMethod" name="paymentMethod" required>
+              <option value="">Pilih metode pembayaran</option>
+              <option value="dana">DANA</option>
+              <option value="gopay">GoPay</option>
+              <option value="bank">Transfer Bank</option>
+            </select>
+
+            <div class="conditional-field" data-method="ewallet">
+              <label for="phoneNumber" id="phoneNumberLabel">Nomor HP</label>
+              <input
+                type="tel"
+                id="phoneNumber"
+                name="phoneNumber"
+                placeholder="08xxxxxxxxxx"
+              />
+            </div>
+
+            <div class="conditional-field" data-method="bank">
+              <label for="bankName">Nama bank</label>
+              <select id="bankName" name="bankName">
+                <option value="">Pilih bank</option>
+                <option value="BCA">BCA</option>
+                <option value="BRI">BRI</option>
+                <option value="Mandiri">Mandiri</option>
+                <option value="BNI">BNI</option>
+                <option value="BTN">BTN</option>
+                <option value="CIMB Niaga">CIMB Niaga</option>
+                <option value="Permata">Permata</option>
+                <option value="BSI">BSI</option>
+                <option value="Other / Bank Lainnya">Other / Bank Lainnya</option>
+              </select>
+            </div>
+
+            <div class="conditional-field" data-method="bank-other">
+              <label for="customBankName">Nama bank lainnya</label>
+              <input
+                type="text"
+                id="customBankName"
+                name="customBankName"
+                placeholder="Tulis nama bank"
+              />
+            </div>
+
+            <div class="conditional-field" data-method="bank">
+              <label for="bankNumber">Nomor rekening</label>
+              <input
+                type="text"
+                id="bankNumber"
+                name="bankNumber"
+                placeholder="Contoh: 1234567890"
+              />
+            </div>
+
+            <div class="conditional-field" data-method="bank">
+              <label for="accountName">Nama pemilik rekening</label>
+              <input
+                type="text"
+                id="accountName"
+                name="accountName"
+                placeholder="Sesuai nama di rekening"
+              />
+            </div>
+
+            <label for="notes">Catatan tambahan (opsional)</label>
+            <textarea
+              id="notes"
+              name="notes"
+              rows="4"
+              placeholder="Contoh: kirim setelah Lebaran, nomor ini aktif, dll."
+            ></textarea>
+
+            <button type="submit" class="primary-button">
+              Kirim Klaim THR
+            </button>
+            <p class="form-status hidden" id="claimFormStatus" aria-live="polite"></p>
+          </form>
+
+          <div class="success-card hidden" id="claimSuccess">
+            <h3>Klaim berhasil dicatat</h3>
+            <p>
+              Data kamu sudah masuk di sistemnya Erlang. THR lagi diproses, tunggu yaa.
+            </p>
+            <a
+              class="secondary-button success-link-button"
+              href="https://wa.me/62811521822?text=Halo%20Erlang%2C%20aku%20sudah%20isi%20klaim%20THR%20%F0%9F%98%84"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ngobrol sama Erlang
+            </a>
+            <button class="secondary-button" data-next="welcomeScreen">
+              Kembali ke Awal
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <canvas class="celebration-canvas" id="celebrationCanvas" aria-hidden="true"></canvas>
+
+    <audio id="envelopeOpenSound" preload="auto">
+      <source src="amplopbuka.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="failSound" preload="auto">
+      <source src="fail.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="normalSound" preload="auto">
+      <source src="normal.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="successSound" preload="auto">
+      <source src="success.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div class="opening-sequence hidden" id="openingSequence" aria-hidden="true">
+      <div class="opening-sequence__overlay"></div>
+      <div class="opening-sequence__stage">
+        <div class="opening-sequence__glow"></div>
+        <div class="envelope" id="envelopeAnimation">
+          <div class="envelope__letter">
+            <span class="envelope__seal">Eid Mubarak</span>
+            <strong>Untuk kamu</strong>
+            <p>sebuah ucapan hangat di hari yang fitri.</p>
+          </div>
+          <div class="envelope__body"></div>
+          <div class="envelope__flap"></div>
+          <div class="envelope__sparkle envelope__sparkle--left"></div>
+          <div class="envelope__sparkle envelope__sparkle--right"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bonus-modal hidden" id="bonusModal" aria-hidden="true">
+      <div class="bonus-modal__overlay" id="bonusModalOverlay"></div>
+      <div
+        class="bonus-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="bonusModalTitle"
+      >
+        <div class="bonus-card bonus-card--modal">
+          <p class="eyebrow">Bonus Kejutan</p>
+          <h3 id="bonusModalTitle">Random THR Bonus</h3>
+          <p class="bonus-text">
+            Pilih 1 mystery box untuk membuka bonus tambahan THR kamu.
+          </p>
+          <div class="bonus-boxes" id="bonusBoxes"></div>
+          <p class="bonus-status" id="bonusStatus">Kamu baru bisa memilih satu box saja.</p>
+          <button type="button" class="primary-button hidden" id="bonusCloseBtn">
+            Makasih Erlang
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
