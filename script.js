@@ -55,7 +55,7 @@ const quizQuestions = [
       "Jam tangan yang bisa mengulang waktu 5 menit terakhir",
       "Kacamata yang bisa melihat niat orang lain",
       "Sepatu yang bisa berjalan di udara",
-      "Headphone yang bisa berbicata dengan hewan",
+      "Headphone yang bisa berbicara dengan hewan",
     ],
     answer: 1,
   },
